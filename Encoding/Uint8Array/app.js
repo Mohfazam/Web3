@@ -7,3 +7,4 @@ let y = 12;
 // console.log(y);
 y.toString(16);
 console.log(y.toString(16)); // 12 in hex is C
+console.log(y.toString(16).padStart(2, "0")); // 12 in hex is 0C
