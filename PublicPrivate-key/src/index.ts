@@ -5,7 +5,7 @@ async function main(){
     console.log("Private key:", privateKey);
 
     const message = new TextEncoder().encode("Hello, World");
-
+ 
     const pubKey = await ed.getPublicKey(privateKey);
 
     const signature = await ed.signAsync(message, privateKey);
