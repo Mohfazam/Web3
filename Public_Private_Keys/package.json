@@ -1,0 +1,18 @@
+{
+  "name": "web3",
+  "version": "1.0.0",
+  "description": "This repository contains various Web3 projects, examples, and experiments aimed at exploring and implementing blockchain technologies. The focus is on decentralized applications (dApps), smart contracts, and blockchain integration.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@noble/ed25519": "^2.2.3",
+    "install": "^0.13.0",
+    "npm": "^11.3.0",
+    "typescript": "^5.8.3"
+  }
+}
