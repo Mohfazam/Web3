@@ -1,5 +1,6 @@
 
 import './App.css'
+import { Wallet } from './Wallet'
 
 function App() {
 
@@ -7,6 +8,7 @@ function App() {
   return (
     <>
       Hey There
+      <Wallet />
     </>
   )
 }
