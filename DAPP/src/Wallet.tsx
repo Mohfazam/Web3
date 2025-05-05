@@ -30,7 +30,7 @@ export const Wallet: FC = () => {
     );
 
     return (
-        <ConnectionProvider endpoint={"https://api.devnet-beta.solana.com"}>
+        <ConnectionProvider endpoint={"https://solana-devnet.g.alchemy.com/v2/6twmuf5vqex_zQlaVhkFhKAjpdRh7FrE"}>
             <WalletProvider wallets={[]} autoConnect>
                 <WalletModalProvider>
                     <WalletMultiButton />
