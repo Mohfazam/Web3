@@ -1,5 +1,6 @@
 export function Airdrop() {
     return <div>
-        Help From Airdrop
+        <input type="number" placeholder="Amount" />
+        <button>Send Airdrop</button>
     </div>
 }
