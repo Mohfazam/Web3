@@ -8,6 +8,7 @@ import {
     WalletMultiButton
 } from '@solana/wallet-adapter-react-ui';
 import { clusterApiUrl } from '@solana/web3.js';
+import { Airdrop } from './Airdrop'
 
 
 import '@solana/wallet-adapter-react-ui/styles.css';
@@ -29,12 +30,13 @@ export const Wallet: FC = () => {
     );
 
     return (
-        <ConnectionProvider endpoint={endpoint}>
+        <ConnectionProvider endpoint={"https://api.devnet-beta.solana.com"}>
             <WalletProvider wallets={[]} autoConnect>
                 <WalletModalProvider>
                     <WalletMultiButton />
                     <WalletDisconnectButton />
-                    
+                    <h1>Help Wallet</h1>
+                    <Airdrop />
                 </WalletModalProvider>
             </WalletProvider>
         </ConnectionProvider>
