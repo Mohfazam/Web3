@@ -1,17 +1,54 @@
-import { useConnection, useWallet } from "@solana/wallet-adapter-react"
+import { useConnection, useWallet } from "@solana/wallet-adapter-react";
+import { clusterApiUrl, LAMPORTS_PER_SOL } from "@solana/web3.js";
+import { useState } from "react";
 
 export function Airdrop() {
-    const wallet = useWallet();
     const { connection } = useConnection();
+    const wallet = useWallet();
 
-    async function sendAirdropToUser(){
-        //@ts-ignore
-        await connection.requestAirdrop(wallet.publicKey, 1000000000);
-        alert("Airdropped SOL");
+    const [amount, setAmount] = useState(1);
+
+    async function sendAirdropToUser() {
+        if (!wallet.publicKey) {
+            alert("Please connect your wallet");
+            return;
+        }
+
+        try {
+            const lamports = amount * LAMPORTS_PER_SOL;
+
+            const sig = await connection.requestAirdrop(wallet.publicKey, lamports);
+
+            // Await confirmation using 'processed' for speed
+            const latestBlockhash = await connection.getLatestBlockhash();
+            await connection.confirmTransaction(
+                {
+                    signature: sig,
+                    ...latestBlockhash,
+                },
+                "processed"
+            );
+
+            console.log("Signature:", sig);
+            alert("✅ Airdrop successful!\nSignature: " + sig);
+        } catch (err) {
+            console.error("Airdrop failed:", err);
+            alert("❌ Airdrop failed:\n" + err.message);
+        }
     }
 
-    return <div>
-        <input type="number" placeholder="Amount" />
-        <button onClick={sendAirdropToUser}>Send Airdrop</button>
-    </div>
+    return (
+        <div style={{ padding: "1rem", fontFamily: "monospace" }}>
+            <input
+                type="number"
+                placeholder="Amount in SOL"
+                value={amount}
+                onChange={(e) => setAmount(parseFloat(e.target.value))}
+                step="0.1"
+                min="0.01"
+            />
+            <p>Wallet Address: {wallet.publicKey?.toBase58()}</p>
+            <button onClick={sendAirdropToUser}>🚀 Send Airdrop</button>
+        </div>
+    );
 }
