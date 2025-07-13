@@ -8,10 +8,15 @@ export const RequestAirdrop = () => {
     const wallet = useWallet();
     const { connection } = useConnection();
 
-    function requestAirdrop() {
+    async function requestAirdrop() {
         const publicKey = wallet.publicKey;
         if(!publicKey) return;
-        connection.requestAirdrop(publicKey, amount * LAMPORTS_PER_SOL);
+        try{
+            await connection.requestAirdrop(publicKey, amount * LAMPORTS_PER_SOL);
+            alert("Air Drop of " + amount + "is successfull");
+        } catch(e){
+            alert("Something went wrong:"+ e);
+        }
     }
 
     return (
