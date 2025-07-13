@@ -10,6 +10,7 @@ import { UnsafeBurnerWalletAdapter } from '@solana/wallet-adapter-wallets';
 //@ts-ignore
 import {
     WalletModalProvider,
+    //@ts-ignore
     WalletDisconnectButton,
     WalletMultiButton
 } from '@solana/wallet-adapter-react-ui';
