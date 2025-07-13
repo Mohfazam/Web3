@@ -26,7 +26,9 @@ function App() {
     <ConnectionProvider endpoint='https://api.devnet.solana.com'> 
        <WalletProvider wallets={[]}>
           <WalletModalProvider>
-            <WalletMultiButton/>
+            <div>
+              <WalletMultiButton/>
+            </div>
           </WalletModalProvider>
        </WalletProvider>
     </ConnectionProvider>
