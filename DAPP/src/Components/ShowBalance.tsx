@@ -1,5 +1,5 @@
 import { useConnection, useWallet } from "@solana/wallet-adapter-react"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const ShowBalance = () => {
 
@@ -10,7 +10,8 @@ export const ShowBalance = () => {
 
     const {connection} = useConnection(); 
 
-    const getUserBalance = async () => {
+    useEffect(() => {
+        const getUserBalance = async () => {
 
         if(!publicKey) return;
 
@@ -18,22 +19,20 @@ export const ShowBalance = () => {
             const bal = await connection.getBalance(publicKey);
             const solBal = bal / 1_000_000_000;
         setBalance(() => solBal)
-        alert("Balance Fetched Successfully");
+        console.log("Balance Fetched Successfully");
         } catch(e){
-            alert("Something went wrong: " + e);
+            console.log("Something went wrong: " + e);
         }
     }
 
-    return(
-        <div>
-            <div>
-                <button className="border-4 p-2 m-2 hover:cursor-pointer" onClick={getUserBalance}>Fetch Balance</button>
-            </div>
+    getUserBalance();
+    }, [publicKey, connection]);
 
-            <h3>The Balance of the user is: 
+    return(
+        <div className="border-l-4 rounded-2xl m-4 p-2 border-r-4 border-t-3 border-t-blue-700 border-b-3 border-b-blue-700">
+            <h3>The Balance of the user is:&nbsp;
                 <strong>{balance}</strong>
             </h3>
-
         </div>
     )
 }
