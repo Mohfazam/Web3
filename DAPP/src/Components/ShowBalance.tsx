@@ -31,7 +31,7 @@ export const ShowBalance = () => {
     return(
         <div className="border-l-4 rounded-2xl m-4 p-2 border-r-4 border-t-3 border-t-blue-700 border-b-3 border-b-blue-700">
             <h3>The Balance of the user is:&nbsp;
-                <strong>{balance}</strong>
+                <strong>{balance}&nbsp;<b className="text-blue-700">SOL</b></strong>
             </h3>
         </div>
     )

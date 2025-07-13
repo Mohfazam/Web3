@@ -23,8 +23,7 @@ export const RequestAirdrop = () => {
         <div className="flex flex-col">
                 <input onChange={(e) => setAmount((Number(e.target.value)))} className="border-8 rounded-2xl p-4 m-4" type="text" placeholder="Amount.." />
             <button onClick={requestAirdrop} className="border-4 rounded-xl font-bold p-2 mb-4 bg-amber-300 hover:cursor-pointer">Request AirDrop</button>
-            <strong className="m-2 mb-2">{wallet.publicKey?.toBase58()}</strong>
-            <strong className="m-2 mb-4 border-l-4 rounded-xl p-2">{amount}</strong>
+            <strong className="m-2 mb-2 border-b-4 rounded-lg border-b-blue-700"><b>Public Key: </b><span className="font-mono text-green-600">{wallet.publicKey?.toBase58()}</span></strong>
         </div>
     )
 }

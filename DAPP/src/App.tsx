@@ -21,6 +21,7 @@ import '@solana/wallet-adapter-react-ui/styles.css';
 
 import { RequestAirdrop } from "./Components/RequestAirdrop"
 import { ShowBalance } from './Components/ShowBalance';
+import { SendToken } from './Components/SendToken';
 
 function App() {
 
@@ -29,13 +30,17 @@ function App() {
     <ConnectionProvider endpoint='https://api.devnet.solana.com'> 
        <WalletProvider wallets={[]}>
           <WalletModalProvider>
-            <div className='w-full h-112 flex flex-col justify-center items-center'>
+            <div className='m-4 w-full h-fit flex flex-col justify-center items-center'>
               <WalletMultiButton/>
                 <div>
                   <RequestAirdrop/>
                 </div>
                 <div>
                   <ShowBalance />
+                </div>
+                <div className='border-4 w-full m-4 mb-6'></div>
+                <div>
+                  <SendToken />
                 </div>
             </div>
           </WalletModalProvider>
