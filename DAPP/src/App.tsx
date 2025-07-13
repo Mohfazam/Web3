@@ -1,13 +1,35 @@
+import './App.css'
+//@ts-ignore
+import React, { FC, useMemo } from 'react';
+//@ts-ignore
+import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
+//@ts-ignore
+import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
+//@ts-ignore
+import { UnsafeBurnerWalletAdapter } from '@solana/wallet-adapter-wallets';
+//@ts-ignore
+import {
+    WalletModalProvider,
+    WalletDisconnectButton,
+    WalletMultiButton
+} from '@solana/wallet-adapter-react-ui';
+//@ts-ignore
+import { clusterApiUrl } from '@solana/web3.js';
+
+import '@solana/wallet-adapter-react-ui/styles.css';
+
 
 function App() {
 
 
   return (
-    <>
-      <div>
-        HI THERE
-      </div>
-    </>
+    <ConnectionProvider endpoint='https://api.devnet.solana.com'> 
+       <WalletProvider wallets={[]}>
+          <WalletModalProvider>
+            <WalletMultiButton/>
+          </WalletModalProvider>
+       </WalletProvider>
+    </ConnectionProvider>
   )
 }
 
