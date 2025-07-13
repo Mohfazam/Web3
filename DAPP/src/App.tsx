@@ -30,7 +30,7 @@ function App() {
     <ConnectionProvider endpoint='https://api.devnet.solana.com'> 
        <WalletProvider wallets={[]}>
           <WalletModalProvider>
-            <div className='m-4 w-full h-fit flex flex-col justify-center items-center'>
+            <div className='m-4 h-fit flex flex-col justify-center items-center overflow-x-hidden'>
               <WalletMultiButton/>
                 <div>
                   <RequestAirdrop/>
