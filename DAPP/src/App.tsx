@@ -9,10 +9,10 @@ import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import { UnsafeBurnerWalletAdapter } from '@solana/wallet-adapter-wallets';
 //@ts-ignore
 import {
-    WalletModalProvider,
-    //@ts-ignore
-    WalletDisconnectButton,
-    WalletMultiButton
+  WalletModalProvider,
+  //@ts-ignore
+  WalletDisconnectButton,
+  WalletMultiButton
 } from '@solana/wallet-adapter-react-ui';
 //@ts-ignore
 import { clusterApiUrl } from '@solana/web3.js';
@@ -22,17 +22,18 @@ import '@solana/wallet-adapter-react-ui/styles.css';
 import { RequestAirdrop } from "./Components/RequestAirdrop"
 import { ShowBalance } from './Components/ShowBalance';
 import { SendToken } from './Components/SendToken';
+import { SolHEader } from './Components/SolHeader';
 
 function App() {
 
 
   return (
-    <ConnectionProvider endpoint='https://api.devnet.solana.com'> 
-       <WalletProvider wallets={[]}>
-          <WalletModalProvider>
-            <div className='m-4 h-fit flex flex-col justify-center items-center overflow-x-hidden'>
-              <WalletMultiButton/>
-                <div>
+    <ConnectionProvider endpoint='https://api.devnet.solana.com'>
+      <WalletProvider wallets={[]}>
+        <WalletModalProvider>
+
+          <WalletMultiButton />
+          {/* <div>
                   <RequestAirdrop/>
                 </div>
                 <div>
@@ -41,10 +42,12 @@ function App() {
                 <div className='border-4 w-full m-4 mb-6'></div>
                 <div>
                   <SendToken />
-                </div>
-            </div>
-          </WalletModalProvider>
-       </WalletProvider>
+                </div> */}
+
+                <SolHEader />
+
+        </WalletModalProvider>
+      </WalletProvider>
     </ConnectionProvider>
   )
 }
