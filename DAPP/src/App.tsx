@@ -32,7 +32,7 @@ function App() {
       <WalletProvider wallets={[]}>
         <WalletModalProvider>
 
-          <WalletMultiButton />
+          {/* <WalletMultiButton /> */}
           {/* <div>
                   <RequestAirdrop/>
                 </div>
