@@ -19,6 +19,12 @@ export const BalanceCard = () => {
                         <span className="text-2xl font-medium text-[#3b82f6]">SOL</span>
                     </div>
                 </div>
+                <div>
+                    <p className="text-[#a3a3a3]">Available balance</p>
+                </div>
+                <div>
+                    <p className="text-[#a3a3a3]">≈ $66.83 USD</p>
+                </div>
             </div>
         </div>
     )
