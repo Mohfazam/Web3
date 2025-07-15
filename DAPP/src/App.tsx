@@ -23,6 +23,7 @@ import { RequestAirdrop } from "./Components/RequestAirdrop"
 import { ShowBalance } from './Components/ShowBalance';
 import { SendToken } from './Components/SendToken';
 import { SolHEader } from './Components/SolHeader';
+import { Layout } from './Components/Main/Layout';
 
 function App() {
 
@@ -44,7 +45,9 @@ function App() {
                   <SendToken />
                 </div> */}
 
-                <SolHEader />
+                {/* <SolHEader /> */}
+
+                <Layout />
 
         </WalletModalProvider>
       </WalletProvider>

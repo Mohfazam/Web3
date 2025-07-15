@@ -1,3 +1,4 @@
+import { ConnectionStatus } from "./Header/ConnectionStatus"
 import { Network } from "./Header/Network"
 
 export const SolHEader = () => {
@@ -10,8 +11,8 @@ export const SolHEader = () => {
                 <div>
                     <Network />
                 </div>
-                <div className="bg-red-700 w-24 h-14 mr-12">
-                    sdkb
+                <div>
+                    <ConnectionStatus />
                 </div>
             </div>
         </div>
