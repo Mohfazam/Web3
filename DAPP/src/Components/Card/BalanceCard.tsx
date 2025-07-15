@@ -10,7 +10,7 @@ export const BalanceCard = () => {
 
             <div className="flex flex-col items-center justify-center gap-2">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-dark-tertiary border border-[#2a2a2a] rounded-full mb-4">
-                    <span className="text-2xl font-bold text-[#3b82f6]">S</span>
+                    <span className="text-2xl font-bold text-[#3b82f6]">SOL</span>
                 </div>
 
                 <div>
