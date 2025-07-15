@@ -8,17 +8,17 @@ export const BalanceCard = () => {
                 <CardTop Text="Balance" Icon={<Wallet size={24} />} />
             </div>
 
-            <div>
+            <div className="flex flex-col items-center justify-center gap-2">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-dark-tertiary border border-[#2a2a2a] rounded-full mb-4">
-                <span className="text-2xl font-bold text-[#3b82f6]">S</span>
-            </div>
-
-            <div>
-                <div className="flex items-center justify-center gap-2">
-                    <span className="text-3xl font-bold text-[#ffffff]">2.85</span>
-                <span className="text-xl font-medium text-[#3b82f6]">SOL</span>
+                    <span className="text-2xl font-bold text-[#3b82f6]">S</span>
                 </div>
-            </div>
+
+                <div>
+                    <div className="flex items-center justify-center gap-2">
+                        <span className="text-3xl font-bold text-[#ffffff]">2.85</span>
+                        <span className="text-2xl font-medium text-[#3b82f6]">SOL</span>
+                    </div>
+                </div>
             </div>
         </div>
     )
