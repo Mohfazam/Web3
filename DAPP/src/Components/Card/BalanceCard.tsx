@@ -3,12 +3,12 @@ import { CardTop } from "../UI/CardTop"
 
 export const BalanceCard = () => {
     return (
-        <div className="bg-[#141414] border border-[#2a2a2a] rounded-xl p-6">
-            <div className="">
+        <div className="bg-[#141414] border border-[#2a2a2a] rounded-xl p-6 h-[381px]">
+            <div className="mb-12">
                 <CardTop Text="Balance" Icon={<Wallet size={24} />} />
             </div>
 
-            <div className="flex flex-col items-center justify-center gap-2">
+            <div className="flex flex-col items-center justify-center gap-4">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-dark-tertiary border border-[#2a2a2a] rounded-full mb-4">
                     <span className="text-2xl font-bold text-[#3b82f6]">SOL</span>
                 </div>
@@ -23,7 +23,7 @@ export const BalanceCard = () => {
                     <p className="text-[#a3a3a3]">Available balance</p>
                 </div>
                 <div>
-                    <p className="text-[#a3a3a3]">≈ $66.83 USD</p>
+                    <p className="text-[#a3a3a3]"> 1 SOL ≈ $66.83 USD</p>
                 </div>
             </div>
         </div>
