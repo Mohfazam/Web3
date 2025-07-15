@@ -1,9 +1,12 @@
+import { Wallet } from "lucide-react";
+
 export const ConnectionStatus = () => {
     return (
-        <div className="border border-[#4a3728] rounded-lg flex items-center w-[91px] h-[30px] px-3">
-            <div className="w-2 h-2 bg-[#f59e0b] rounded-full mr-2" />
-            <span className="text-xs font-medium text-[#f59e0b]">
-                DEVNET
+        <div className="flex items-center gap-2 px-4 py-2 bg-[#141414] border border-[#2a2a2a] rounded-lg">
+            <div className="w-2 h-2 bg-[#22c55e] rounded-full" />
+            <Wallet size={18} className="text-[#a3a3a3]" />
+            <span className="text-sm text-[#a3a3a3] font-medium">
+                Connected
             </span>
         </div>
     );
